@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="styles/prettify-tomorrow.css" rel="stylesheet" type="text/css">
+    <link href="styles/jsdoc-default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+
+    <section>
+
+        <header>
+
+            <h2></h2>
+
+
+        </header>
+
+        <article>
+            <div class="container-overview">
+
+
+                <dl class="details">
+
+
+                </dl>
+
+
+            </div>
+
+
+            <h3 class="subsection-title">Members</h3>
+
+
+            <h4 class="name" id="got"><span class="type-signature">(constant) </span>got<span
+                    class="type-signature"></span></h4>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-author">Author:</dt>
+                <dd class="tag-author">
+                    <ul>
+                        <li>IITII</li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line6">line 6</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h3 class="subsection-title">Methods</h3>
+
+
+            <h4 class="name" id="cdn_preheating"><span class="type-signature">(async) </span>cdn_preheating<span
+                    class="signature">(token, preHeatArray, MAX_TRY, QUERY_BREAK, chunk_size, got_instance)</span><span
+                    class="type-signature"></span></h4>
+
+
+            <div class="description">
+                cdn preHeating task
+                <br>
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th>Default</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM TOKEN</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>preHeatArray</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">Array</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">pre-heating url array</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>MAX_TRY</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">Maximum attempts</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>QUERY_BREAK</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">Number</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">setTimeout time unit</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>chunk_size</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                        10
+
+                    </td>
+
+
+                    <td class="description last"></td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>got_instance</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                        null
+
+                    </td>
+
+
+                    <td class="description last">Got instance, default null
+
+                        As we know, one we commit the preHeatingTask, more than
+                        one cdn node will get resource file from the source
+                        site via public Internet.
+                        <br>
+                        So, the source site's traffic will be very busy after
+                        we commit the task.
+                        If too many URLs are submitted in a short time, most tasks will fail.
+                        <br>
+                        huaweicloud will retry once if connection time is more than 30s.
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line357">line 357</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h4 class="name" id="cdn_preheatingtasks"><span
+                    class="type-signature">(async) </span>cdn_preheatingtasks<span class="signature">(array, token, instance)</span><span
+                    class="type-signature"> &rarr; {JSON|Error}</span></h4>
+
+
+            <div class="description">
+                huaweicloud cdn preheatingtasks
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th>Default</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>array</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">Array</span>
+                        |
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last"></td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM TOKEN</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>instance</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                        null
+
+                    </td>
+
+
+                    <td class="description last">Got instance, default null</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line192">line 192</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li>
+                            <a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/debug?product=CDN&api=CreatePreheatingTasks">https://apiexplorer.developer.huaweicloud.com/apiexplorer/debug?product=CDN&api=CreatePreheatingTasks</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                result
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">JSON</span>
+                    |
+
+                    <span class="param-type">Error</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="cdn_refreshtasks"><span class="type-signature">(async) </span>cdn_refreshtasks<span
+                    class="signature">(array, token, types, instance)</span><span class="type-signature"> &rarr; {JSON|Error}</span>
+            </h4>
+
+
+            <div class="description">
+                huaweicloud cdn refreshtasks
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th>Default</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>array</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">Array</span>
+                        |
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last"></td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM TOKEN</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>types</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">'file'</span>
+                        |
+
+                        <span class="param-type">'directory'</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                        file
+
+                    </td>
+
+
+                    <td class="description last">refresh types, default 'file'</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>instance</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                        null
+
+                    </td>
+
+
+                    <td class="description last">Got instance, default null</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line223">line 223</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li>
+                            <a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CDN&api=CreateRefreshTasks">https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CDN&api=CreateRefreshTasks</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                result
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">JSON</span>
+                    |
+
+                    <span class="param-type">Error</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="checkUrl"><span class="type-signature"></span>checkUrl<span
+                    class="signature">(array)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+
+            <div class="description">
+                Give a string or array, get a compact array
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>array</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+                        |
+
+                        <span class="param-type">Array</span>
+
+
+                    </td>
+
+
+                    <td class="description last">Input array or string</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line114">line 114</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li><a href="https://www.lodashjs.com/docs/lodash.compact">https://www.lodashjs.com/docs/lodash.compact</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                Output array without null object
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">Array</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="getToken"><span class="type-signature">(async) </span>getToken<span class="signature">()</span><span
+                    class="type-signature"> &rarr; {JSON}</span></h4>
+
+
+            <div class="description">
+                Get huaweicloud IAM TOKEN
+            </div>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line134">line 134</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li>
+                            <a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/debug?product=IAM&api=KeystoneCreateUserTokenByPassword">https://apiexplorer.developer.huaweicloud.com/apiexplorer/debug?product=IAM&api=KeystoneCreateUserTokenByPassword</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                huaweicloud IAM TOKEN
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">JSON</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="got_instance"><span class="type-signature"></span>got_instance<span class="signature">(prefixUrl, token, json_body)</span><span
+                    class="type-signature"> &rarr; {Got}</span></h4>
+
+
+            <div class="description">
+                Simple packaging got
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th>Default</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>prefixUrl</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+                        |
+
+                        <span class="param-type">URL</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">got prefixUrl</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM Token</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>json_body</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                        null
+
+                    </td>
+
+
+                    <td class="description last">POST BODY, NULL for GET Method</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line45">line 45</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li><a href="https://github.com/sindresorhus/got%0A%3Cbr">https://github.com/sindresorhus/got
+                            <br</a></li>
+
+                        <li><a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc">https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                Got instance
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">Got</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="hwc_common"><span class="type-signature">(async) </span>hwc_common<span
+                    class="signature">(prefixUrl, api_url, body, token, instance)</span><span class="type-signature"> &rarr; {JSON|Error}</span>
+            </h4>
+
+
+            <div class="description">
+                huaweicloud common api operation
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th>Default</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>prefixUrl</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+                        |
+
+                        <span class="param-type">URL</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">prefixUrl got prefixUrl</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>api_url</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">API URL which shouldn't start with '/'</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>body</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">request body</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="default">
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM TOKEN</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>instance</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="default">
+
+                        null
+
+                    </td>
+
+
+                    <td class="description last">Got instance, default null</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line80">line 80</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li><a href="https://github.com/sindresorhus/got%0A%3Cbr">https://github.com/sindresorhus/got
+                            <br</a></li>
+
+                        <li><a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc">https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">JSON</span>
+                    |
+
+                    <span class="param-type">Error</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="showHistoryTaskDetails"><span class="type-signature">(async) </span>showHistoryTaskDetails<span
+                    class="signature">(history_tasks_id, token, instance)</span><span class="type-signature"> &rarr; {JSON|Error}</span>
+            </h4>
+
+
+            <div class="description">
+                huaweicloud cdn refreshtasks
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>history_tasks_id</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="description last">TaskID</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM TOKEN</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>instance</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="description last">Got instance, default null</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line254">line 254</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+                <dt class="tag-see">See:</dt>
+                <dd class="tag-see">
+                    <ul>
+                        <li>
+                            <a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/mock?product=CDN&api=ShowHistoryTaskDetails">https://apiexplorer.developer.huaweicloud.com/apiexplorer/mock?product=CDN&api=ShowHistoryTaskDetails</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                result
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">JSON</span>
+                    |
+
+                    <span class="param-type">Error</span>
+
+
+                </dd>
+            </dl>
+
+
+            <h4 class="name" id="waitForRefreshTaskDone"><span class="type-signature">(async) </span>waitForRefreshTaskDone<span
+                    class="signature">(token, refreshTaskId, MAX_TRY, query_break, instance)</span><span
+                    class="type-signature"> &rarr; {Array|Number|Error}</span></h4>
+
+
+            <div class="description">
+                wait for refresh task done
+            </div>
+
+
+            <h5>Parameters:</h5>
+
+
+            <table class="params">
+                <thead>
+                <tr>
+
+                    <th>Name</th>
+
+
+                    <th>Type</th>
+
+
+                    <th class="last">Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+
+                <tr>
+
+                    <td class="name"><code>token</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">String</span>
+
+
+                    </td>
+
+
+                    <td class="description last">huaweicloud IAM TOKEN</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>refreshTaskId</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">Number</span>
+
+
+                    </td>
+
+
+                    <td class="description last">cdn refresh Task ID</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>MAX_TRY</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="description last">Maximum attempts</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>query_break</code></td>
+
+
+                    <td class="type">
+
+
+                        <span class="param-type">Number</span>
+
+
+                    </td>
+
+
+                    <td class="description last">setTimeout time unit</td>
+                </tr>
+
+
+                <tr>
+
+                    <td class="name"><code>instance</code></td>
+
+
+                    <td class="type">
+
+                    </td>
+
+
+                    <td class="description last">Got instance, default null</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+
+            <dl class="details">
+
+
+                <dt class="tag-source">Source:</dt>
+                <dd class="tag-source">
+                    <ul class="dummy">
+                        <li>
+                            <a href="index.js.html">index.js</a>, <a href="index.js.html#line298">line 298</a>
+                        </li>
+                    </ul>
+                </dd>
+
+
+            </dl>
+
+
+            <h5>Returns:</h5>
+
+
+            <div class="param-desc">
+                Number for succeed task numbers
+                <br>
+                Array for failed task array
+                <br>
+                Error for other error
+            </div>
+
+
+            <dl>
+                <dt>
+                    Type
+                </dt>
+                <dd>
+
+                    <span class="param-type">Array</span>
+                    |
+
+                    <span class="param-type">Number</span>
+                    |
+
+                    <span class="param-type">Error</span>
+
+
+                </dd>
+            </dl>
+
+
+        </article>
+
+    </section>
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+    <h3>Global</h3>
+    <ul>
+        <li><a href="global.html#cdn_preheating">cdn_preheating</a></li>
+        <li><a href="global.html#cdn_preheatingtasks">cdn_preheatingtasks</a></li>
+        <li><a href="global.html#cdn_refreshtasks">cdn_refreshtasks</a></li>
+        <li><a href="global.html#checkUrl">checkUrl</a></li>
+        <li><a href="global.html#getToken">getToken</a></li>
+        <li><a href="global.html#got">got</a></li>
+        <li><a href="global.html#got_instance">got_instance</a></li>
+        <li><a href="global.html#hwc_common">hwc_common</a></li>
+        <li><a href="global.html#showHistoryTaskDetails">showHistoryTaskDetails</a></li>
+        <li><a href="global.html#waitForRefreshTaskDone">waitForRefreshTaskDone</a></li>
+    </ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Sep 03 2020 20:43:06
+    GMT+0800 (GMT+08:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
