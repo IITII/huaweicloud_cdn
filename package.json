@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.2.0",
     "got": "^11.5.2",
     "lodash": "^4.17.20",
     "node-fetch": "^2.6.0"
