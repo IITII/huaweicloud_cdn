@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>JSDoc: Home</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="styles/prettify-tomorrow.css" rel="stylesheet" type="text/css">
-    <link href="styles/jsdoc-default.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 
 <body>
@@ -19,56 +19,129 @@
 
     <h1 class="page-title">Home</h1>
 
+    
 
-    <h3></h3>
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
 
     <section>
         <article><h1>HuaweiCloud API(Nodejs)</h1>
-            <ul>
-                <li>Base on huaweicloud api</li>
-                <li>Write for personal account</li>
-                <li>All personal info, such as: <code>username</code> &amp; <code>user password</code> is store in
-                    <code>ENV</code></li>
-            </ul>
-            <h2>How to use?</h2>
-            <ol>
-                <li>store your user information in ENV via using <code>export</code>, for example: <code>export
-                    HWC_NAME=&quot;233&quot; &amp;&amp; export HWC_PASSWORD=&quot;233&quot;</code></li>
-                <li>See: <a href="https://iitii.github.io/huaweicloud_cdn/">https://iitii.github.io/huaweicloud_cdn/</a>
-                </li>
-            </ol>
-        </article>
+<ul>
+<li>Base on huaweicloud api</li>
+<li>Write for personal account</li>
+<li>All personal info, such as: <code>username</code> &amp; <code>user password</code> is store in <code>ENV</code></li>
+</ul>
+<h2>Docs</h2>
+<ul>
+<li>See: <a href="https://iitii.github.io/huaweicloud_cdn/">https://iitii.github.io/huaweicloud_cdn/</a></li>
+</ul>
+<h2>How to use?</h2>
+<ol>
+<li>store your user information in ENV via using <code>export</code>, for example: <code>export HWC_NAME=&quot;233&quot; &amp;&amp; export HWC_PASSWORD=&quot;233&quot;</code></li>
+<li>See: <a href="https://iitii.github.io/huaweicloud_cdn/">https://iitii.github.io/huaweicloud_cdn/</a></li>
+</ol>
+<h2>Example</h2>
+<pre class="prettyprint source lang-javascript"><code>let token = await getToken();
+let cdn_re = await cdn_preheatingtasks('link',
+  token.x_subject_token)
+let cdn_refresh = await cdn_refreshtasks('link', token.x_subject_token);
+let detail1 = await showHistoryTaskDetails(token.x_subject_token, cdn_refresh.body.refreshTask.id)
+console.log(cdn_re)
+console.log(cdn_refresh)
+console.log(cdn_refresh.body)
+console.log(detail1)
+console.log(detail1.body)
+waitForRefreshTaskDone(token.x_subject_token, detail1.body.id)
+  .then((res) => {
+    console.log(res)
+  }).then((res) => {
+  console.log(res)
+})
+  .catch(e => {
+    console.log(e)
+  })
+cdn_preheating(token.x_subject_token, ['link'])
+  .then(r => {
+    console.log(r)
+  })
+  .catch(e => {
+    console.log(e)
+  })
+</code></pre>
+<h2>configure</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Param</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NAME</td>
+<td style="text-align:center">process.env.HWC_NAME</td>
+<td style="text-align:center">huaweicloud username</td>
+</tr>
+<tr>
+<td style="text-align:center">PASSWORD</td>
+<td style="text-align:center">process.env.HWC_PASSWORD</td>
+<td style="text-align:center">huaweicloud password</td>
+</tr>
+<tr>
+<td style="text-align:center">USER_DOMAIN_NAME</td>
+<td style="text-align:center">process.env.HWC_USER_DOMAIN_NAME</td>
+<td style="text-align:center">huaweicloud user domain name</td>
+</tr>
+<tr>
+<td style="text-align:center">SCOPE_DOMAIN_NAME</td>
+<td style="text-align:center">process.env.HWC_SCOPE_DOMAIN_NAME</td>
+<td style="text-align:center">huaweicloud user scope domain name</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>See: <a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&amp;api=KeystoneCreateUserTokenByPassword">https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&amp;api=KeystoneCreateUserTokenByPassword</a><br>
+See: <a href="https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CDN&amp;api=CreatePreheatingTasks">https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CDN&amp;api=CreatePreheatingTasks</a></p>
+</blockquote></article>
     </section>
+
+
+
+
 
 
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2>
-    <h3>Global</h3>
-    <ul>
-        <li><a href="global.html#cdn_preheating">cdn_preheating</a></li>
-        <li><a href="global.html#cdn_preheatingtasks">cdn_preheatingtasks</a></li>
-        <li><a href="global.html#cdn_refreshtasks">cdn_refreshtasks</a></li>
-        <li><a href="global.html#checkUrl">checkUrl</a></li>
-        <li><a href="global.html#getToken">getToken</a></li>
-        <li><a href="global.html#got">got</a></li>
-        <li><a href="global.html#got_instance">got_instance</a></li>
-        <li><a href="global.html#hwc_common">hwc_common</a></li>
-        <li><a href="global.html#showHistoryTaskDetails">showHistoryTaskDetails</a></li>
-        <li><a href="global.html#waitForRefreshTaskDone">waitForRefreshTaskDone</a></li>
-    </ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cdn_preheating">cdn_preheating</a></li><li><a href="global.html#cdn_preheatingtasks">cdn_preheatingtasks</a></li><li><a href="global.html#cdn_refreshtasks">cdn_refreshtasks</a></li><li><a href="global.html#checkUrl">checkUrl</a></li><li><a href="global.html#get_bytes">get_bytes</a></li><li><a href="global.html#getToken">getToken</a></li><li><a href="global.html#got">got</a></li><li><a href="global.html#got_instance">got_instance</a></li><li><a href="global.html#human_net_speed">human_net_speed</a></li><li><a href="global.html#hwc_common">hwc_common</a></li><li><a href="global.html#live_net_speed">live_net_speed</a></li><li><a href="global.html#showHistoryTaskDetails">showHistoryTaskDetails</a></li><li><a href="global.html#sleep">sleep</a></li><li><a href="global.html#wait_for_low_traffic_usage">wait_for_low_traffic_usage</a></li><li><a href="global.html#waitForRefreshTaskDone">waitForRefreshTaskDone</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Thu Sep 03 2020 20:43:06
-    GMT+0800 (GMT+08:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Mon Sep 21 2020 17:19:38 GMT+0800 (GMT+08:00)
 </footer>
 
 <script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"></script>
+<script src="scripts/linenumber.js"> </script>
 </body>
 </html>

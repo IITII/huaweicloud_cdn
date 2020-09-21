@@ -49,7 +49,7 @@ async function sleep(ms) {
 /**
  * get previous break traffic state, only support linux
  * @param INTERFACE_NAME network interface device name
- * @return {*[]|{TX: *, RX: *}} unit: byte, previous break traffic state
+ * @return unit: byte, previous break traffic state
  */
 function get_bytes(INTERFACE_NAME = 'eth0') {
   const {spawnSync} = require('child_process'),
